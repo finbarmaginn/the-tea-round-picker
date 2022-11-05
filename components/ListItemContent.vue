@@ -5,7 +5,7 @@
     </button>
     <label :for="name.id" class="align-middle">
       <div class="m-2 text-gray-400" v-if="name.hasMadeTea"><strike>{{ name.text }}</strike></div>
-      <div class="m-2" v-else>{{ name.text }}</div>
+      <div class="m-2" v-else><strong>{{ name.text }}</strong></div>
     </label>
   </div>
 </template> 

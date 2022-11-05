@@ -1,8 +1,6 @@
 <template>
   <div class="mx-auto my-4 md:container bg-gray-75">
-    <div class="relative flex items-top justify-center">
-      <h1 class="text-3xl font-bold m-4">The Tea Round Picker</h1>
-    </div>
+    <HeaderComponent />
     <div class="relative flex items-top justify-center my-4">
       <input type="text" @keyup="updateNameField" @keyup.enter="addName" placeholder="Input Name" class="p-2 border border-gray-400"
         v-bind:value="nameField" />
@@ -25,7 +23,7 @@
       </div>
 
       <div>
-        <h2 class="text-center align-middle text-2xl font-bold m4">{{ randomName.text }}</h2>
+        <h2 class="text-center text-2xl font-bold my-10">{{ randomName.text }}</h2>
       </div>
     </div>
   </div>
