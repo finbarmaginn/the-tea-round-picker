@@ -4,7 +4,7 @@
       <h1 class="text-3xl font-bold m-4">The Tea Round Picker</h1>
     </div>
     <div class="relative flex items-top justify-center my-4">
-      <input type="text" @keyup="updateNameField" @keyup.enter="addName" placeholder="Input Name" class="p-2 border"
+      <input type="text" @keyup="updateNameField" @keyup.enter="addName" placeholder="Input Name" class="p-2 border border-gray-400"
         v-bind:value="nameField" />
       <button @click="addName" class="bg-gray-700 p-2 text-gray-50">Add Name</button>
     </div>
