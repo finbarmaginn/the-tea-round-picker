@@ -5,6 +5,9 @@ export const state = () => ({
 });
 
 export const mutations = {
+  rehydrateStore(state, names) {
+    state.list = names
+  },
   updateNameField(state, text) {
     state.nameField = text;
   },
@@ -27,10 +30,18 @@ export const mutations = {
     /**
      * update selected name in list to show that this name has been chosen
      */
-    for (var i = 0; i < state.list.length; i++){
+    for (let i = 0; i < state.list.length; i++){
       if (state.list[i].id === newValue.id) {
         state.list[i].hasMadeTea = true;
       }
+    }
+  },
+  removeRandomName(state) {
+    state.randomName = {}
+  },
+  resetEligibleNames(state) {
+    for (let i = 0; i < state.list.length; i++){
+      state.list[i].hasMadeTea = false;
     }
   },
   removeAllNames(state) {
