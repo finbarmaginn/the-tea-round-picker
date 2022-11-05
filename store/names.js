@@ -6,7 +6,7 @@ export const state = () => ({
 
 export const mutations = {
   rehydrateStore(state, names) {
-    state.list = names.length ? names : [];
+    state.list = names;
   },
   updateNameField(state, text) {
     state.nameField = text;

@@ -45,7 +45,8 @@ div.flex label>div {
 export default {
   name: 'IndexPage',
   beforeMount: function () {
-    this.$store.commit('names/rehydrateStore', JSON.parse(localStorage.getItem('names')))
+    const parsedStorage = JSON.parse(localStorage.getItem('names')) || []
+    this.$store.commit('names/rehydrateStore', parsedStorage)
   },
   computed: {
     names() {
