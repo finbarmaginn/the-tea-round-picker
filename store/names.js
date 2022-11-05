@@ -12,6 +12,7 @@ export const mutations = {
     state.nameField = text;
   },
   add(state, text) {
+    console.log(state)
     state.list.push({
       text,
       id: Date.now(),
