@@ -17,7 +17,7 @@
       </div>
 
       <div class="text-center flex flex-col border-gray-400 border-r border-l">
-        <button @click="getRandomName" class="relative m-4 my-2 bg-gray-700 p-2 text-gray-50"><DiceIcon />Get Random Name</button>
+        <button @click="getRandomName" class="relative m-4 my-2 bg-gray-700 p-2 text-gray-50"><DiceIcon v-bind:isSpinning="isSpinning" />Get Random Name</button>
         <button @click="resetEligibleNames" class="m-4 my-2 bg-gray-700 p-2 text-gray-50">Reset Eligible Names</button>
         <button @click="removeAllNames" class="m-4 my-2 bg-gray-700 p-2 text-gray-50">Remove All Names</button>
       </div>
@@ -61,6 +61,9 @@ export default {
     },
     hasMadeTea() {
       return this.$store.state.names.hasMadeTea
+    },
+    isSpinning() {
+      return this.$store.state.dice.isSpinning
     }
   },
   methods: {
@@ -77,6 +80,10 @@ export default {
     },
     getRandomName() {
       this.$store.commit('names/getRandomName')
+      this.$store.commit('dice/activateSpin')
+      setTimeout(() => {
+        this.$store.commit('dice/deactivateSpin')
+      }, 500);
       this.storeNamesLocally()
     },
     removeAllNames() {
