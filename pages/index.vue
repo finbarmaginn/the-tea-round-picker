@@ -30,6 +30,9 @@
 </template>
 
 <style>
+body {
+  overflow-y: scroll;
+}
 div.flex>div {
   width: 33.3333%;
 }

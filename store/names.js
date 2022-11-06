@@ -12,7 +12,7 @@ export const mutations = {
     state.nameField = text;
   },
   add(state, text) {
-    state.list.push({
+    state.list.unshift({
       text,
       id: Date.now(),
       hasMadeTea: false,
