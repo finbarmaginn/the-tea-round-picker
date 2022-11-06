@@ -79,10 +79,10 @@ export default {
       this.$store.commit('names/removeRandomName')
     },
     getRandomName() {
-      this.$store.commit('names/getRandomName')
       this.$store.commit('dice/activateSpin')
       setTimeout(() => {
         this.$store.commit('dice/deactivateSpin')
+        this.$store.commit('names/getRandomName')
       }, 500);
       this.storeNamesLocally()
     },
