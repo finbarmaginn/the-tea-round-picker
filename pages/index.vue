@@ -83,8 +83,8 @@ export default {
       setTimeout(() => {
         this.$store.commit('dice/deactivateSpin')
         this.$store.commit('names/getRandomName')
+        this.storeNamesLocally()
       }, 500);
-      this.storeNamesLocally()
     },
     removeAllNames() {
       this.$store.commit('names/removeAllNames')
